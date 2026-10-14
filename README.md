@@ -1,2 +1,46 @@
-# trueborn-global-intelligence
-TRUEBORN GLOBAL INTELLIGENCE — Market Explorer MVP, evidence-based market research.
+# TRUEBORN GLOBAL INTELLIGENCE
+
+Market Explorer MVP · interface portuguesa, estática e adaptável a telemóvel, preparada para GitHub Pages.
+
+## Âmbito
+
+Três análises independentes: **Beef Chef Solutions**, **Beef Savoury Cuts** e **Charcuterie bovina**. Lamb, Pork, Sea e Snacks não integram o modelo. As gamas provêm do pedido do utilizador; produtos, atributos e posicionamento não foram inferidos da conversa anterior.
+
+Os dois catálogos não estavam acessíveis na conversa recuperada nem na pasta de trabalho. O MVP começa sem dados comerciais e sem mercados recomendados. Não foram inventados preços, procura, margens, volumes, certificações ou produtos.
+
+## Disponível
+
+- Seleção de países para investigação, pesquisa e comparação.
+- Ficha de evidência por país, gama e critério.
+- Importação e exportação JSON com validação de esquema e proveniência declarada.
+- Pontuação ponderada, cobertura, bloqueio por acesso desconhecido/impedido e por evidência desatualizada.
+- Top 5 por gama e visão global, apenas quando existem avaliações completas.
+- Fontes de partida, metodologia proposta e estado real das integrações.
+
+A análise está em memória: exportar antes de recarregar. A importação **substitui** a análise atual. Um ficheiro JSON pode declarar revisão mas isso não prova a veracidade dos dados. A equipa precisa de confirmar a evidência antes de tomar decisões.
+
+## Executar
+
+Node 22 ou superior. Sem dependências do frontend.
+
+```sh
+npm test
+npm run build
+npm start
+```
+
+Abrir `http://localhost:4173`. Para publicar, em Settings → Pages selecionar **GitHub Actions**. O workflow verifica e publica apenas `dist/` depois de um push para `main`. Os pedidos de alteração executam as verificações sem publicar.
+
+## Dados e pontuação
+
+Consultar [contrato de dados](docs/data-contract.md) e [arquitetura](docs/architecture.md). A metodologia `proposed-v1` é uma proposta inicial, não uma validação da direção comercial. Sem evidência completa, o resultado é `null`, nunca zero presumido. As notas são avaliações humanas documentadas; não são previsões de vendas.
+
+## Supabase e OpenAI
+
+O esquema SQL e a função `market-brief` são preparação de integração, **não instalados ou ligados ao frontend**. A interface estática não recolhe chaves nem contém chamadas à OpenAI. A função usa autenticação, acesso por organização, quota atómica e segredo no servidor. A IA produz um rascunho sujeito a revisão; não altera observações ou pontuações.
+
+Para ativar é necessário um projeto Supabase escolhido pela equipa, aplicar a migração, criar organização e membros autorizados, configurar os segredos e realizar testes de acesso com dois utilizadores. Não enviar chaves no chat. A base de catálogos fica privada; ficheiros e dados confidenciais não pertencem ao repositório público.
+
+## Estado em 14/10/2026
+
+Código e testes do motor concluídos. Catálogos, recolha de indicadores, integração real e automações pendentes. Não existe agendamento nem contacto comercial automático.
