@@ -10,6 +10,7 @@ Os dois catálogos foram consultados em 14/10/2026: Chef Solutions (página 1) e
 
 ## Disponível
 
+- Oito candidatos de distribuição em três países, com contactos públicos, fontes e adequação por gama. Nenhum foi contactado.
 - Pesquisa inicial de nove países com dados públicos, variação anual e shortlist qualitativa separada por gama.
 - Todos os produtos congelados por indicação do utilizador; fichas técnicas dispensadas nesta fase.
 - Gamas e produtos dos catálogos, com referências de origem.
