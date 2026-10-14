@@ -43,4 +43,4 @@ Antes de uma primeira decisão: acordar âncoras de 0/50/100 para cada critério
 - [FAOSTAT](https://www.fao.org/faostat/en/#data): portal identificado, sem extração.
 - [Access2Markets](https://trade.ec.europa.eu/access-to-markets/en/home): ligação de partida; acesso específico por produto/origem/destino pendente.
 
-Categorias agregadas de preparados de carne podem conter várias espécies: não equivalem automaticamente a charcutaria de bovino. Os catálogos devem fundamentar conservação, ingredientes, embalagem, certificações e identificação dos produtos. Não preencher com informações da resposta anterior de ChatGPT.
+Categorias agregadas de preparados de carne podem conter várias espécies: não equivalem automaticamente a charcutaria de bovino. A identificação dos produtos foi referenciada nos dois catálogos (ver catalogue-review.md). Conservação, ingredientes completos e certificações exigem documentação técnica adicional; os selos promocionais não a substituem. Não preencher com informações da resposta anterior de ChatGPT.

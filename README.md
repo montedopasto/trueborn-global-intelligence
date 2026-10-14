@@ -4,12 +4,13 @@ Market Explorer MVP · interface portuguesa, estática e adaptável a telemóvel
 
 ## Âmbito
 
-Três análises independentes: **Beef Chef Solutions**, **Beef Savoury Cuts** e **Charcuterie bovina**. Lamb, Pork, Sea e Snacks não integram o modelo. As gamas provêm do pedido do utilizador; produtos, atributos e posicionamento não foram inferidos da conversa anterior.
+Três análises independentes: **Beef Chef Solutions**, **Beef Savoury Cuts** e **Charcuterie bovina**. Lamb, Pork, Sea e Snacks não integram o modelo. As gamas provêm do pedido do utilizador. Os nomes dos produtos estão referenciados nos dois catálogos fornecidos, com as páginas de origem e as limitações documentais.
 
-Os dois catálogos não estavam acessíveis na conversa recuperada nem na pasta de trabalho. O MVP começa sem dados comerciais e sem mercados recomendados. Não foram inventados preços, procura, margens, volumes, certificações ou produtos.
+Os dois catálogos foram consultados em 14/10/2026: Chef Solutions (página 1) e Savoury Cuts (páginas 1 e 2, incluindo charcutaria bovina). Consultar a [revisão documental](docs/catalogue-review.md). O MVP continua sem indicadores comerciais e sem mercados recomendados. Não foram inventados preços, procura, margens, volumes ou certificações.
 
 ## Disponível
 
+- Gamas e produtos dos catálogos, com referências de origem e lacunas técnicas.
 - Seleção de países para investigação, pesquisa e comparação.
 - Ficha de evidência por país, gama e critério.
 - Importação e exportação JSON com validação de esquema e proveniência declarada.
@@ -43,4 +44,4 @@ Para ativar é necessário um projeto Supabase escolhido pela equipa, aplicar a 
 
 ## Estado em 14/10/2026
 
-Código e testes do motor concluídos. Catálogos, recolha de indicadores, integração real e automações pendentes. Não existe agendamento nem contacto comercial automático.
+Interface publicada, nomes dos produtos conferidos nos catálogos e testes do motor concluídos. Fichas técnicas, recolha de indicadores, integração real e automações pendentes. Não existe agendamento nem contacto comercial automático.
