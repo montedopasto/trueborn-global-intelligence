@@ -15,6 +15,6 @@ Roles: viewer reads; analyst/admin can insert and update commercial tracking. Th
 
 Run `supabase/tests/tracking_security.sql` in the SQL Editor as postgres. It tests editor insert/update, audit, viewer reading, denied viewer writes, cross organization isolation, denied membership self grants, nonmember and anonymous access. All synthetic fixtures run inside a transaction and roll back.
 
-Eleven existing research/scoring tests and the static build pass. Final email delivery and a real authorized user's save/reload still require that user's login and membership. No outreach is sent by this application. OpenAI and recurring automations remain inactive.
+Eleven existing research/scoring tests and the static build pass. Live verification completed: the owner received the login link, authenticated, was explicitly authorized as an analyst, saved the first research follow-up and recovered it after a full page reload. Database security checks passed with all temporary fixtures rolled back. No outreach is sent by this application. OpenAI and recurring automations remain inactive.
 
 Sources: https://supabase.com/docs/guides/getting-started/api-keys and https://supabase.com/docs/guides/auth/auth-email-passwordless
