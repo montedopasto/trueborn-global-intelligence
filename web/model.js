@@ -9,7 +9,7 @@ export const CRITERIA = [
  {id:'access',name:'Acesso ao mercado',weight:20,explanation:'Requisitos sanitários, estabelecimento elegível, rotulagem e tarifas para produto, origem e destino concretos.'},
  {id:'economics',name:'Viabilidade económica',weight:15,explanation:'Custos, preço entregue e margem com propostas documentadas. PIB per capita é contexto, não uma margem ou previsão de vendas.'},
  {id:'competition',name:'Espaço competitivo',weight:10,explanation:'Concorrentes, preços observados e diferenciação comprovada. Não inferir ausência de concorrência por falta de dados.'},
- {id:'logistics',name:'Logística e conservação',weight:10,explanation:'Tempo, transporte e cadeia de frio adequados ao produto. Validar conservação e prazo de vida no catálogo.'}
+ {id:'logistics',name:'Logística e conservação',weight:10,explanation:'Tempo, transporte congelado e custos de rota documentados. Não inferir viabilidade logística apenas pela distância entre países.'}
 ];
 export const COUNTRIES = [ ['DE','Alemanha'],['SA','Arábia Saudita'],['BE','Bélgica'],['CA','Canadá'],['ES','Espanha'],['US','Estados Unidos'],['AE','Emirados Árabes Unidos'],['FR','França'],['IT','Itália'],['JP','Japão'],['NL','Países Baixos'],['PL','Polónia'],['GB','Reino Unido'],['CH','Suíça'] ];
 export const SOURCES = [

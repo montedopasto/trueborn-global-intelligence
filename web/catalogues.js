@@ -4,7 +4,8 @@ export const CATALOGUES = [
  {id:'C1',filename:'The Chef Solutions_True Born_2025.pdf.pdf',pages:3,sha256:'7fb77773b6c24284aa17ded652ba119dac0d43f8026b2e52a5267419b4d849ee',checkedAt:'2026-10-14',scopePages:[1],excludedPages:[2,3]},
  {id:'C2',filename:'The Savoury Cuts_True Born_2025.pdf.pdf',pages:5,sha256:'f3cf4e69c8167af5d198ca2956378c8b122ee12aa8d8b3ca67968e2e1f1fd743',checkedAt:'2026-10-14',scopePages:[1,2],excludedPages:[3,4,5]}
 ];
-const missing=['Preços e condições comerciais','Pesos, dimensões e códigos de artigo','Temperaturas e prazo de conservação','Ingredientes completos e alergénios','Certificações e elegibilidade de exportação','Códigos pautais por produto'];
+const missing=['Preços e condições comerciais','Pesos, dimensões e códigos de artigo','Ingredientes completos e alergénios','Certificações e elegibilidade de exportação','Códigos pautais por produto'];
+export const STORAGE_ASSUMPTION = {state:'Congelado',source:'Indicação do utilizador em 14/10/2026',scope:['chef','savoury','charcuterie']};
 export const PRODUCT_PROFILES = {
  chef:{source:'C1',page:1,heading:'Beef · The Chef Solutions',channels:[],
   products:['Sirloin Cap','Acém','Tip of the Sirloin','Sirloin','Filé Mignon','Rump','Rump Steak','Beef Rump',"Cow’s Brisket",'Rib Fillet','Palette','Top Round','Patinho','Shoulder or Palette','Palette Racket','Back Muscle','Fraldinha ou Aba',"Cow’s Belly",'Front Muscle','Lagarto','Soft Muscle'],

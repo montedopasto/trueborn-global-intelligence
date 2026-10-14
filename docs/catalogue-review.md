@@ -49,3 +49,7 @@ C1, páginas 2 e 3: Lamb e Pork. C2, páginas 3, 4 e 5: Lamb, Sea e Snacks. Não
 ## Efeito na aplicação
 
 Novo separador “Gamas & catálogos”, referências por página, nomes de produto, canais explicitamente identificados, declarações atribuídas à marca, lacunas técnicas e exportação JSON das referências. Os catálogos não alimentam automaticamente notas de procura, margem, competição ou acesso ao mercado. Nenhum ranking comercial foi fabricado.
+
+## Informação posterior do utilizador
+
+Em 14/10/2026, o utilizador confirmou que todos os produtos das três gamas são congelados e dispensou a recolha de fichas técnicas nesta fase. Esta informação tem origem na instrução direta do utilizador, não na inferência dos catálogos. A pesquisa de países avança com esse pressuposto.
