@@ -2,7 +2,7 @@ import {automaticRanking,orderCandidates} from './automatic-ranking.js';
 import {trade,tradeUrl,access,transport,formats,priorities} from './public-study-2025.js';
 import {marketEvidence,evidenceProgress,criterionResearch,initialEvidenceExport} from './market-evidence.js?v=0.7.0';
 import {OUTREACH} from './outreach.js?v=0.6.0';
-import {trackingView,bindTracking,initTracking} from './tracking.js?v=0.5.0';
+import {trackingView,bindTracking,initTracking} from './tracking.js?v=0.12.0';
 import { PARTNERS,FIT_LABELS,filterPartners,partnerRoles } from './partners.js?v=0.11.1';
 import { RESEARCH,usdMillions,growthPercentage } from './research.js';
 import { CATALOGUES,PRODUCT_PROFILES,STORAGE_ASSUMPTION } from './catalogues.js?v=0.3.0';
