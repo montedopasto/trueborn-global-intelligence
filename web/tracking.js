@@ -20,7 +20,7 @@ export function trackingView(){
 function feedback(text){message=text;const el=document.querySelector('#tracking-message');if(el)el.textContent=text;}
 export function bindTracking(){
  const login=document.querySelector('#login-form');
- if(login)login.onsubmit=async e=>{e.preventDefault();const b=e.submitter;b.disabled=true;const email=login.querySelector('#login-email').value.trim(),field=login.querySelector('#login-password'),password=field.value;field.value='';try{const result=b.id==='create-pilot-account'?await cloud.auth.signUp.email({email,password,name:email.split('@')[0]}):await cloud.auth.signIn.email({email,password});if(result.error)throw result.error;await refresh();if(!user)feedback('Conta criada. Confirma o email, se solicitado, e entra.');}catch{feedback('Não foi possível iniciar sessão ou criar a conta. Confirma os dados e tenta novamente.');}finally{b.disabled=false;}};
+ if(login)login.onsubmit=async e=>{e.preventDefault();const b=e.submitter??login.querySelector('button');b.disabled=true;const email=login.querySelector('#login-email').value.trim(),field=login.querySelector('#login-password'),password=field.value;field.value='';try{const result=b.id==='create-pilot-account'?await cloud.auth.signUp.email({email,password,name:email.split('@')[0]}):await cloud.auth.signIn.email({email,password});if(result.error)throw result.error;await refresh();if(!user)feedback('Conta criada. Confirma o email, se solicitado, e entra.');}catch{feedback('Não foi possível iniciar sessão ou criar a conta. Confirma os dados e tenta novamente.');}finally{b.disabled=false;}};
  const logout=document.querySelector('#cloud-logout');if(logout)logout.onclick=async()=>{const {error}=await cloud.auth.signOut();if(error)feedback('Não foi possível terminar a sessão.');else await refresh();};
  const reload=document.querySelector('#cloud-refresh');if(reload)reload.onclick=()=>refresh();
  for(const [id,key] of [['tracking-partner','partner'],['tracking-line','line']]){const el=document.getElementById(id);if(el)el.onchange=()=>{if(key==='partner')partner=el.value;else line=el.value;message='';notify();};}
@@ -34,7 +34,7 @@ export function bindTracking(){
 }
 async function refresh(){
  const ticket=++generation;loading=true;role=null;candidates=[];records=[];notify();
- try{const {data,error}=await cloud.auth.getSession();if(error)throw error;if(ticket!==generation)return;user=data.session?.user??null;
+ try{const {data,error}=await cloud.auth.getSession();if(error)throw error;if(ticket!==generation)return;user=data?.user??data?.session?.user??null;
  if(user){const member=await db.from('members').select('access_role').eq('subject',user.id).maybeSingle();if(member.error)throw member.error;if(ticket!==generation)return;role=member.data?.access_role??null;if(role){const r=await db.from('tracking').select('*').order('updated_at',{ascending:false});if(r.error)throw r.error;if(ticket!==generation)return;candidates=PARTNERS.companies.map(p=>({id:p.id,profile:{name:p.name}}));records=r.data;if(!candidates.some(p=>p.id===partner))partner=candidates[0]?.id??'';}}
  }catch{if(ticket!==generation)return;role=null;candidates=[];records=[];message='Não foi possível verificar o acesso. Tenta atualizar.';}finally{if(ticket===generation){loading=false;notify();}}
 }
