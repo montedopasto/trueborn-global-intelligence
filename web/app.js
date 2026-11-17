@@ -2,7 +2,7 @@ import {automaticRanking,orderCandidates} from './automatic-ranking.js';
 import {trade,tradeUrl,access,transport,formats,priorities} from './public-study-2025.js';
 import {marketEvidence,evidenceProgress,criterionResearch,initialEvidenceExport} from './market-evidence.js?v=0.7.0';
 import {OUTREACH} from './outreach.js?v=0.6.0';
-import {trackingView,bindTracking,initTracking} from './tracking.js?v=0.12.1';
+import {trackingView,bindTracking,initTracking} from './tracking.js?v=0.12.2';
 import { PARTNERS,FIT_LABELS,filterPartners,partnerRoles } from './partners.js?v=0.11.1';
 import { RESEARCH,usdMillions,growthPercentage } from './research.js';
 import { CATALOGUES,PRODUCT_PROFILES,STORAGE_ASSUMPTION } from './catalogues.js?v=0.3.0';
@@ -12,7 +12,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const countryName=code=>COUNTRIES.find(([c])=>c===code)?.[1]??code;
 let partnerCountry='ALL',partnerQuery='',partnerRole='ALL';
 const partnerRows=()=>orderCandidates(filterPartners(line,partnerCountry,partnerQuery).filter(p=>partnerRole==='ALL'||partnerRoles(p).includes(partnerRole)),line);
-let dataset=RESEARCH.markets.reduce((d,m)=>addCountry(d,m.code),emptyDataset()),page=location.hash.includes('access_token')?'tracking':'explorer',line='chef',query='',selected=new Set();
+let dataset=RESEARCH.markets.reduce((d,m)=>addCountry(d,m.code),emptyDataset()),page=(location.hash.includes('access_token')||location.hash.startsWith('#convite='))?'tracking':'explorer',line='chef',query='',selected=new Set();
 function toast(message){$('#toast').textContent=message;$('#toast').style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').style.display='none',6000);}
 function download(name,data){const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function openCountries(){const options=COUNTRIES.filter(([code])=>!dataset.markets.some(m=>m.code===code));$('#country').innerHTML=options.map(([c,n])=>`<option value="${c}">${n}</option>`).join('');$('#add-country').disabled=!options.length;$('#country-dialog').showModal();}
