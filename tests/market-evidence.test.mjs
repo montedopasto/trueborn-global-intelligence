@@ -15,8 +15,8 @@ test('Charcuterie retains mixed category caveat; regulatory sources do not becom
  assert.ok(facts.every(f=>!f.id.includes('020230')&&!f.id.includes('020220')));
  }
  assert.ok(marketEvidence('SA','chef').some(f=>f.criterion==='access'));
- assert.ok(!marketEvidence('SA','chef').some(f=>f.criterion==='channel'));
- assert.equal(evidenceProgress('JP','chef').researched,1);
+ assert.ok(!marketEvidence('SA','chef').some(f=>f.criterion==='channel'&&f.url.includes('sfda.gov.sa')));
+ assert.equal(evidenceProgress('JP','chef').researched,2);
  assert.equal(evidenceProgress('CA','chef').researched,0);
  assert.equal(evidenceProgress('ES','chef').researched,2);
  assert.equal(evidenceProgress('ES','global').total,18);
