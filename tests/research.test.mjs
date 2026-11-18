@@ -15,6 +15,7 @@ test('Annual value change handles negative growth and invalid baselines',()=>{
 });
 test('Public research and shortlists never implicitly approve access or generate commercial scores',()=>{
  const dataset=RESEARCH.markets.reduce((d,m)=>addCountry(d,m.code),emptyDataset());
- assert.equal(dataset.markets.length,9);
+ assert.equal(dataset.markets.length,10);
+ assert.equal(dataset.markets.filter(m=>m.code==='PT').length,1);
  for(const line of ['chef','savoury','charcuterie','global'])assert.ok(ranking(dataset,line).every(m=>m.evaluation.score===null));
 });
