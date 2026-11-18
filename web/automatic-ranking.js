@@ -12,7 +12,7 @@ export function automaticRanking(line,trade,partners,formats){
  const ids=new Set([...Object.keys(trade),...partners.map(p=>p.country)]);
  return [...ids].flatMap(code=>{
   const candidates=partners.filter(p=>p.country===code);
-  const exactFormat=line==='savoury'&&['ES','IT','NL'].includes(code)&&Boolean(formats[code]);
+  const exactFormat=line==='savoury'&&['ES','IT','NL','PT'].includes(code)&&Boolean(formats[code]);
   const initial=candidates.some(p=>p.fit[line]==='initial');
   const exploratory=candidates.some(p=>p.fit[line]==='exploratory')||(line==='charcuterie'&&code==='DE'&&Boolean(formats.DE));
   const raw=trade[code]?.[line==='charcuterie'?2:0]?.[0];

@@ -1,8 +1,8 @@
 import {createClient} from './vendor/neon-client.js';
-import {PARTNERS} from './partners.js?v=0.11.1';
+import {PARTNERS} from './partners.js?v=0.13.1';
 const cloud=createClient({auth:{url:'https://ep-odd-field-b992wqzq.neonauth.c-7.eu-central-1.aws.neon.tech/neondb/auth'},dataApi:{url:'https://ep-odd-field-b992wqzq.apirest.c-7.eu-central-1.aws.neon.tech/neondb/rest/v1'}});
 const db=cloud.schema('trueborn_private');
-import {LINES} from './model.js?v=0.3.0';
+import {LINES} from './model.js?v=0.13.1';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const statuses={researching:'Em pesquisa',draft_ready:'Abordagem preparada',contacted:'Contactado',replied:'Resposta recebida',qualified:'Oportunidade qualificada',declined:'Sem interesse'};
 let user=null,role=null,candidates=[],records=[],loading=true,message='',partner='',line='chef',generation=0;

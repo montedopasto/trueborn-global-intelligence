@@ -1,6 +1,6 @@
-import {RESEARCH,growthPercentage} from './research.js';
-import {PARTNERS} from './partners.js';
-import {CRITERIA,LINES} from './model.js?v=0.7.0';
+import {RESEARCH,growthPercentage} from './research.js?v=0.13.1';
+import {PARTNERS} from './partners.js?v=0.13.1';
+import {CRITERIA,LINES} from './model.js?v=0.13.1';
 const pending={
  demand:'Confirmar a correspondência dos códigos pautais às referências desta gama e aprofundar procura específica.',
  channel:'Identificar canais que aceitem as apresentações desta gama em conservação congelada. Interesse comercial não confirmado.',
@@ -25,7 +25,7 @@ export function marketEvidence(code,lineId){
  if(code==='DE'&&lineId==='charcuterie')facts.push(sourceFact('DE-egeturk-competition','competition','egeturk','Concorrente com salsichas de bovino apresentadas em lata','Oferta pública','Consulta 2026','Würstchen / beef sausages','Produto e conservação diferentes do congelado Trueborn. Não demonstra adequação do canal ou certificação Trueborn.'));
  for(const p of PARTNERS.companies.filter(p=>p.country===code&&p.fit[lineId]!=='no_evidence')){
   const s=p.sources.find(s=>lineId==='charcuterie'&&p.id==='ferwerda'?s.url.includes('processed-meat'):true)??p.sources[0];
-  facts.push({id:`${code}-${p.id}-profile`,criterion:'channel',source:p.name,url:s.url,value:p.evidence,unit:'Atividade publicada',period:'Consulta 2026',locator:s.locator,collectedAt:PARTNERS.researchedAt,level:p.fit[lineId]==='exploratory'?'Hipótese exploratória':'Contexto documental',limit:p.reason[lineId]+' Interesse de compra não confirmado.',score:null,reviewStatus:'Por rever para avaliação'});
+  facts.push({id:`${code}-${p.id}-profile`,criterion:'channel',source:p.name,url:s.url,value:p.evidence,unit:'Atividade publicada',period:'Consulta 2026',locator:s.locator,collectedAt:p.researchedAt??PARTNERS.researchedAt,level:p.fit[lineId]==='exploratory'?'Hipótese exploratória':'Contexto documental',limit:p.reason[lineId]+' Interesse de compra não confirmado.',score:null,reviewStatus:'Por rever para avaliação'});
  }
  for(const sourceId of m.channels.filter(id=>['uk','sa'].includes(id)))facts.push(sourceFact(`${code}-${sourceId}-requirements`,'access',sourceId,sourceId==='sa'?'Requisito de certificação Halal publicado para carnes':'Orientação oficial de importação para Great Britain','Requisitos gerais','Consulta 2026',RESEARCH.sources[sourceId].name,m.risk+' Verificação específica de estabelecimento e produto pendente.'));
  return facts;

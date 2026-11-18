@@ -11,7 +11,7 @@ export const CRITERIA = [
  {id:'competition',name:'Espaço competitivo',weight:10,explanation:'Concorrentes, preços observados e diferenciação comprovada. Não inferir ausência de concorrência por falta de dados.'},
  {id:'logistics',name:'Logística e conservação',weight:10,explanation:'Tempo, transporte congelado e custos de rota documentados. Não inferir viabilidade logística apenas pela distância entre países.'}
 ];
-export const COUNTRIES = [ ['DE','Alemanha'],['SA','Arábia Saudita'],['BE','Bélgica'],['CA','Canadá'],['ES','Espanha'],['US','Estados Unidos'],['AE','Emirados Árabes Unidos'],['FR','França'],['IT','Itália'],['JP','Japão'],['NL','Países Baixos'],['PL','Polónia'],['GB','Reino Unido'],['CH','Suíça'] ];
+export const COUNTRIES = [ ['PT','Portugal'], ['DE','Alemanha'],['SA','Arábia Saudita'],['BE','Bélgica'],['CA','Canadá'],['ES','Espanha'],['US','Estados Unidos'],['AE','Emirados Árabes Unidos'],['FR','França'],['IT','Itália'],['JP','Japão'],['NL','Países Baixos'],['PL','Polónia'],['GB','Reino Unido'],['CH','Suíça'] ];
 export const SOURCES = [
  {name:'UN Comtrade',tag:'Comércio internacional',url:'https://comtradeplus.un.org/',description:'Portal de consulta de fluxos comerciais. Os códigos e a composição da categoria precisam de validação por gama.',status:'Indicadores da categoria recolhidos via WITS; correspondência por gama e avaliação pendentes'},
  {name:'Banco Mundial',tag:'Contexto económico',url:'https://data.worldbank.org/indicator/NY.GDP.PCAP.CD',description:'PIB per capita em USD correntes. Indicador de contexto, sem equivalência direta a procura ou vendas.',status:'Página consultada em 14/10/2026; sem valores importados'},

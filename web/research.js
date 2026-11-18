@@ -2,6 +2,7 @@ export const RESEARCH = {
  version:1, researchedAt:'2026-10-14', referenceYear:2024,
  assumption:{state:'Congelado',source:'Indicação direta do utilizador em 14/10/2026',scope:['chef','savoury','charcuterie']},
  sources:{
+  makroPT:{name:'Makro Portugal · carne para profissionais',url:'https://www.makro.pt/universo-de-produto/carne'},
   beef24:{name:'WITS / UN Comtrade · HS 020230 · 2024',url:'https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2024/tradeflow/Imports/partner/WLD/product/020230'},
   beef23:{name:'WITS / UN Comtrade · HS 020230 · 2023',url:'https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2023/tradeflow/Imports/partner/WLD/product/020230'},
   bone24:{name:'WITS / UN Comtrade · HS 020220 · 2024',url:'https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2024/tradeflow/Imports/partner/WLD/product/020220'},
@@ -18,6 +19,7 @@ export const RESEARCH = {
  },
  // All values below retain the source unit: 1000 USD. These are category trade flows, not Trueborn sales.
  markets:[
+  {code:'PT',beef2024:157031.74,beef2023:138895.28,bone2024:17160.17,char2024:74588.37,portugalBeef2024:null,phase:'Mercado doméstico',channels:['makroPT'],finding:'Mercado doméstico para testar formatos e canais profissionais, com distribuição nacional.',risk:'Importações são apenas contexto: não incluem toda a produção ou consumo nacionais. A oferta publicada não confirma interesse na Trueborn.',next:'Comparar formatos por gama e mapear compradores nacionais de restauração e retalho.'},
   {code:'ES',beef2024:171314.32,beef2023:145454.17,bone2024:24358.84,char2024:135683.75,portugalBeef2024:6558.04,phase:'Primeira abordagem',channels:['makro'],finding:'Existe oferta pública de bovino congelado para HoReCa na Makro e um fluxo português documentado nesta categoria.',risk:'A presença de oferta concorrente não demonstra interesse em Trueborn. Para charcutaria congelada, confirmar um canal específico.',next:'Pesquisar distribuidores de congelados e operadores de restauração que trabalhem cortes e porções.'},
   {code:'FR',beef2024:453553.29,beef2023:475786.24,bone2024:12675.65,char2024:519863.48,portugalBeef2024:1572.86,phase:'Primeira abordagem',channels:['metroFR'],finding:'Mercado de importação relevante e oferta profissional de bovino na METRO. Portugal já exportava a categoria para França.',risk:'O canal consultado comprova oferta de bovino; não comprova todos os cortes congelados ou interesse de compra. A procura de charcutaria bovina congelada permanece por confirmar.',next:'Procurar grossistas de congelados e validar canais Food Service antes de considerar retalho.'},
   {code:'NL',beef2024:273041.93,beef2023:245336.85,bone2024:8235.34,char2024:360386.58,portugalBeef2024:1824.01,phase:'Primeira abordagem',channels:['sligro'],finding:'A Sligro apresenta categoria de bovino com filtro para congelados. Há fluxo português documentado.',risk:'Importações podem servir consumo interno ou redistribuição. O total não identifica margem, canal final ou oportunidade Trueborn.',next:'Mapear grossistas e separar compradores para consumo local de operadores de redistribuição.'},
