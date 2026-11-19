@@ -1,9 +1,9 @@
 import {automaticRanking,orderCandidates} from './automatic-ranking.js?v=0.13.1';
 import {trade,tradeUrl,access,transport,formats,priorities} from './public-study-2025.js?v=0.13.1';
-import {marketEvidence,evidenceProgress,criterionResearch,initialEvidenceExport} from './market-evidence.js?v=0.13.2';
+import {marketEvidence,evidenceProgress,criterionResearch,initialEvidenceExport} from './market-evidence.js?v=0.13.3';
 import {OUTREACH} from './outreach.js?v=0.6.0';
-import {trackingView,bindTracking,initTracking} from './tracking.js?v=0.13.2';
-import { PARTNERS,FIT_LABELS,filterPartners,partnerRoles } from './partners.js?v=0.13.2';
+import {trackingView,bindTracking,initTracking} from './tracking.js?v=0.13.3';
+import { PARTNERS,FIT_LABELS,filterPartners,partnerRoles } from './partners.js?v=0.13.3';
 import { RESEARCH,usdMillions,growthPercentage } from './research.js?v=0.13.1';
 import { CATALOGUES,PRODUCT_PROFILES,STORAGE_ASSUMPTION } from './catalogues.js?v=0.3.0';
 import { LINES,CRITERIA,COUNTRIES,SOURCES,emptyDataset,validateDataset,ranking,evaluate,addCountry,safeUrl } from './model.js?v=0.13.1';
@@ -110,7 +110,7 @@ function partnerList(){
 function bindPartnerRows(){document.querySelectorAll('[data-partner]').forEach(b=>b.onclick=()=>partnerDetail(b.dataset.partner));}
 function partnerDetail(id){
  const c=PARTNERS.companies.find(c=>c.id===id);$('#detail-title').textContent=c.name;
- $('#detail-body').innerHTML=`<span class="badge">${esc(c.status)}</span><p>${esc(countryName(c.country))} · ${esc(c.city)} · ${esc(c.role)}</p><h3>Atividade publicada</h3><p>${esc(c.evidence)}</p><h3>Relação com as gamas</h3>${LINES.map(l=>`<div class="evidence"><b>${l.name} · ${FIT_LABELS[c.fit[l.id]]}</b><p>${esc(c.reason[l.id])}</p></div>`).join('')}<h3>Contacto profissional publicado</h3><p>Email: ${c.email?esc(c.email):'Não recolhido'}<br>Telefone: ${esc(c.phone)}</p><p><a href="${esc(c.contactUrl)}" target="_blank" rel="noopener noreferrer">Consultar página do operador ↗</a></p><p>São contactos públicos; não foi confirmada a receção de mensagens nem a responsabilidade de compras.</p><h3>Fontes e localização</h3>${c.sources.map(source=>`<div class="evidence"><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.url)} ↗</a><p>${esc(source.locator)} · ${esc(source.read)}</p></div>`).join('')}<p>Recolha: ${PARTNERS.researchedAt}. Não se verificaram registos societários, solvabilidade ou aceitação de fornecedor.</p><h3>Pergunta de qualificação</h3><p>${esc(c.check)}</p>`;
+ $('#detail-body').innerHTML=`<span class="badge">${esc(c.status)}</span><p>${esc(countryName(c.country))} · ${esc(c.city)} · ${esc(c.role)}</p><h3>Atividade publicada</h3><p>${esc(c.evidence)}</p><h3>Relação com as gamas</h3>${LINES.map(l=>`<div class="evidence"><b>${l.name} · ${FIT_LABELS[c.fit[l.id]]}</b><p>${esc(c.reason[l.id])}</p></div>`).join('')}<h3>Contacto profissional publicado</h3><p>Email: ${c.email?esc(c.email):'Não recolhido'}<br>Telefone: ${esc(c.phone)}</p><p><a href="${esc(c.contactUrl)}" target="_blank" rel="noopener noreferrer">Consultar página do operador ↗</a></p><p>São contactos públicos; não foi confirmada a receção de mensagens nem a responsabilidade de compras.</p><h3>Fontes e localização</h3>${c.sources.map(source=>`<div class="evidence"><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.url)} ↗</a><p>${esc(source.locator)} · ${esc(source.read)}</p></div>`).join('')}<p>Recolha: ${esc(c.researchedAt??PARTNERS.researchedAt)}. Não se verificaram registos societários, solvabilidade ou aceitação de fornecedor.</p><h3>Pergunta de qualificação</h3><p>${esc(c.check)}</p>`;
  $('#detail').showModal();
 }
 function catalogues(){
