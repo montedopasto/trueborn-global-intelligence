@@ -1,9 +1,9 @@
 import {automaticRanking,orderCandidates} from './automatic-ranking.js?v=0.13.1';
 import {trade,tradeUrl,access,transport,formats,priorities} from './public-study-2025.js?v=0.13.1';
-import {marketEvidence,evidenceProgress,criterionResearch,initialEvidenceExport} from './market-evidence.js?v=0.13.4';
+import {marketEvidence,evidenceProgress,criterionResearch,initialEvidenceExport} from './market-evidence.js?v=0.13.5';
 import {OUTREACH} from './outreach.js?v=0.6.0';
-import {trackingView,bindTracking,initTracking} from './tracking.js?v=0.13.4';
-import { PARTNERS,FIT_LABELS,filterPartners,partnerRoles } from './partners.js?v=0.13.4';
+import {trackingView,bindTracking,initTracking} from './tracking.js?v=0.13.5';
+import { PARTNERS,FIT_LABELS,filterPartners,partnerRoles } from './partners.js?v=0.13.5';
 import { RESEARCH,usdMillions,growthPercentage } from './research.js?v=0.13.1';
 import { CATALOGUES,PRODUCT_PROFILES,STORAGE_ASSUMPTION } from './catalogues.js?v=0.3.0';
 import { LINES,CRITERIA,COUNTRIES,SOURCES,emptyDataset,validateDataset,ranking,evaluate,addCountry,safeUrl } from './model.js?v=0.13.1';
