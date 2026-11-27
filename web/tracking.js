@@ -1,5 +1,5 @@
 import {createClient} from './vendor/neon-client.js';
-import {PARTNERS} from './partners.js?v=0.13.6';
+import {PARTNERS} from './partners.js?v=0.13.7';
 const cloud=createClient({auth:{url:'https://ep-odd-field-b992wqzq.neonauth.c-7.eu-central-1.aws.neon.tech/neondb/auth'},dataApi:{url:'https://ep-odd-field-b992wqzq.apirest.c-7.eu-central-1.aws.neon.tech/neondb/rest/v1'}});
 const db=cloud.schema('trueborn_private');
 import {LINES} from './model.js?v=0.13.1';

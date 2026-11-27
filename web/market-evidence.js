@@ -1,5 +1,5 @@
 import {RESEARCH,growthPercentage} from './research.js?v=0.13.1';
-import {PARTNERS} from './partners.js?v=0.13.6';
+import {PARTNERS} from './partners.js?v=0.13.7';
 import {CRITERIA,LINES} from './model.js?v=0.13.1';
 const pending={
  demand:'Confirmar a correspondência dos códigos pautais às referências desta gama e aprofundar procura específica.',
